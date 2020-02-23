@@ -37,34 +37,20 @@ public class HCS {
 
         // Build the mirror node client
         final MirrorClient mirrorClient = new MirrorClient(MIRROR_NODE_ADDRESS);
-
         //Create a new topic
+
         final TransactionId transactionId = new ConsensusTopicCreateTransaction()
                 .execute(client);
 
-      //Grab the newly generated topic ID
+//Grab the newly generated topic ID
         final ConsensusTopicId topicId = transactionId.getReceipt(client).getConsensusTopicId();
 
         System.out.println("Your topic ID is: " +topicId);
 
-     //Subscribe to a topic
-        new MirrorConsensusTopicQuery()
-                .setTopicId(topicId)
-                .subscribe(mirrorClient, resp -> {
-                            String messageAsString = new String(resp.message, StandardCharsets.UTF_8);
 
-                            System.out.println(resp.consensusTimestamp + " received topic message: " + messageAsString);
-                        },
-                        // On gRPC error, print the stack trace
-                        Throwable::printStackTrace);
 
-        //Submit a message to a topic
-        new ConsensusMessageSubmitTransaction()
-                .setTopicId(topicId)
-                .setMessage("hello, HCS! ")
-                .execute(client)
-                .getReceipt(client);
     }
 }
+
 
 
