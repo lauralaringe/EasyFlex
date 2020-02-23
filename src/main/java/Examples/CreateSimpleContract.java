@@ -53,6 +53,7 @@ public final class CreateSimpleContract {
         // by this account and be signed by this key
         client.setOperator(OPERATOR_ID, OPERATOR_KEY);
 
+        // Different from original code (next two lines)
         client.setMaxTransactionFee(new Hbar(100));
         client.setMaxQueryPayment(new Hbar(10));
 
@@ -69,8 +70,9 @@ public final class CreateSimpleContract {
         System.out.println("contract bytecode file: " + newFileId);
 
         // create the contract itself
+        //Changes done in this part: Add commets in line 74
         TransactionId contractTxId = new ContractCreateTransaction()//.setAutoRenewPeriod(Duration.ofHours(1))
-            .setGas(100_000_000)
+            .setGas(100_000_000) //Change the number but doesn't make any difference
             .setBytecodeFileId(newFileId)
             // set an admin key so we can delete the contract later
             .setAdminKey(OPERATOR_KEY.publicKey)//.setMaxTransactionFee(200_000_000)
