@@ -36,7 +36,6 @@ public final class CreateSimpleContract {
 
 
         try (InputStream jsonStream = cl.getResourceAsStream("hello_world.json")) {
-            System.out.println("AAAAA: " + jsonStream);
             if (jsonStream == null) {
                 throw new RuntimeException("failed to get hello_world.json");
             }
@@ -55,12 +54,10 @@ public final class CreateSimpleContract {
         client.setOperator(OPERATOR_ID, OPERATOR_KEY);
 
         // create the contract's bytecode file
-        TransactionId fileTxId = new FileCreateTransaction().setExpirationTime(
-            Instant.now()
-                .plus(Duration.ofSeconds(3600)))
+        TransactionId fileTxId = new FileCreateTransaction()
             // Use the same key as the operator to "own" this file
             .addKey(OPERATOR_KEY.publicKey)
-            .setContents(byteCodeHex.getBytes())
+            .setContents(byteCodeHex.getBytes()).setMaxTransactionFee(200_000_000)
             .execute(client);
 
         TransactionReceipt fileReceipt = fileTxId.getReceipt(client);
