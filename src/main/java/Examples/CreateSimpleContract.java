@@ -57,7 +57,7 @@ public final class CreateSimpleContract {
         client.setMaxQueryPayment(new Hbar(10));
 
         // create the contract's bytecode file
-        TransactionId fileTxId = new FileCreateTransaction()
+        TransactionId fileTxId = new FileCreateTransaction() //We deleted the last part of this function (as it is done in line 72)
             // Use the same key as the operator to "own" this file
             .addKey(OPERATOR_KEY.publicKey)
             .setContents(byteCodeHex.getBytes())//.setMaxTransactionFee(200_000_000)
