@@ -4,12 +4,15 @@ import com.hedera.hashgraph.sdk.Client;
 import com.hedera.hashgraph.sdk.HederaStatusException;
 import com.hedera.hashgraph.sdk.TransactionId;
 import com.hedera.hashgraph.sdk.account.AccountId;
+import com.hedera.hashgraph.sdk.consensus.ConsensusMessageSubmitTransaction;
 import com.hedera.hashgraph.sdk.consensus.ConsensusTopicCreateTransaction;
 import com.hedera.hashgraph.sdk.consensus.ConsensusTopicId;
 import com.hedera.hashgraph.sdk.crypto.ed25519.Ed25519PrivateKey;
 import com.hedera.hashgraph.sdk.mirror.MirrorClient;
+import com.hedera.hashgraph.sdk.mirror.MirrorConsensusTopicQuery;
 import io.github.cdimascio.dotenv.Dotenv;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 
@@ -36,6 +39,7 @@ public class HCS {
         // Build the mirror node client
         final MirrorClient mirrorClient = new MirrorClient(MIRROR_NODE_ADDRESS);
 
+
         //Create a new topic
         final TransactionId transactionId;
         try {
@@ -46,12 +50,33 @@ public class HCS {
             final ConsensusTopicId topicId = transactionId.getReceipt(client).getConsensusTopicId();
 
             System.out.println("Your topic ID is: " +topicId);
-        } catch (HederaStatusException e) {
+
+
+            //Subscribe to the topic TopicId
+        new MirrorConsensusTopicQuery()
+                .setTopicId(topicId)
+                .subscribe(mirrorClient, resp -> {
+                            String messageAsString = new String(resp.message, StandardCharsets.UTF_8);
+
+                            System.out.println(resp.consensusTimestamp + " received topic message: " + messageAsString);
+                        },
+                        // On gRPC error, print the stack trace
+                        Throwable::printStackTrace);
+
+
+        //Submit a message to a topic
+        new ConsensusMessageSubmitTransaction()
+                .setTopicId(topicId)
+                .setMessage("hello")
+                .execute(client)
+                .getReceipt(client);
+
+
+            Thread.sleep(30000);
+
+        } catch (HederaStatusException | InterruptedException e) {
             e.printStackTrace();
         }
-
-
-
 
 
 
