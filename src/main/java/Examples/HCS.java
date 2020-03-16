@@ -52,6 +52,8 @@ public class HCS {
             System.out.println("Your topic ID is: " +topicId);
 
 
+
+
             //Subscribe to the topic TopicId
         new MirrorConsensusTopicQuery()
                 .setTopicId(topicId)
@@ -64,12 +66,12 @@ public class HCS {
                         Throwable::printStackTrace);
 
 
-        //Submit a message to a topic
-        new ConsensusMessageSubmitTransaction()
-                .setTopicId(topicId)
-                .setMessage("hello")
-                .execute(client)
-                .getReceipt(client);
+            //Submit a message to a topic
+            new ConsensusMessageSubmitTransaction()
+                    .setTopicId(topicId)
+                    .setMessage("hello")
+                    .execute(client)
+                    .getReceipt(client);
 
 
             Thread.sleep(30000);
