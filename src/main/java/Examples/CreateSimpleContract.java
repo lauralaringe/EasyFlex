@@ -101,16 +101,16 @@ public final class CreateSimpleContract {
         System.out.println("contract message: " + message);
 
         // now delete the contract
-        TransactionId contractDeleteTxnId = new ContractDeleteTransaction()
-            .setContractId(newContractId)
-            .execute(client);
+       // TransactionId contractDeleteTxnId = new ContractDeleteTransaction()
+        //    .setContractId(newContractId)
+        //    .execute(client);
 
-        TransactionReceipt contractDeleteResult = contractDeleteTxnId.getReceipt(client);
+        //TransactionReceipt contractDeleteResult = contractDeleteTxnId.getReceipt(client);
 
-        if (contractDeleteResult.status != Status.Success) {
-            System.out.println("error deleting contract: " + contractDeleteResult.status);
-            return;
-        }
-        System.out.println("Contract successfully deleted");
+        //if (contractDeleteResult.status != Status.Success) {
+         //   System.out.println("error deleting contract: " + contractDeleteResult.status);
+         //   return;
+        //}
+        //System.out.println("Contract successfully deleted");
     }
 }
