@@ -28,3 +28,4 @@ public class ImportMeas {
     }
 }
 
+//content= content that has to be converted in byte and then stored
