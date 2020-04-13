@@ -113,3 +113,4 @@ gradle-app.setting
 
 #.env file
 .env
+measurement.csv

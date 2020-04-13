@@ -21,5 +21,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.opencsv/opencsv
     compile group: 'com.opencsv', name: 'opencsv', version: '4.3'
 
+    // https://mvnrepository.com/artifact/org.json/json
+    compile group: 'org.json', name: 'json', version: '20190722'
+
 
 }
