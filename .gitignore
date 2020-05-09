@@ -111,6 +111,5 @@ gradle-app.setting
 
 # End of https://www.gitignore.io/api/gradle,intellij
 
-#.env file
-.env
-measurement.csv
+# measurement file
+mes.csv
