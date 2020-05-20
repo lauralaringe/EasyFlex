@@ -29,6 +29,8 @@ public class Main {
         User laura= new User(OPERATOR_KEY, OPERATOR_PUBLIC_KEY, OPERATOR_ID);
         User emilia = new User(OPERATOR_KEY_EMILIA, OPERATOR_PUBLIC_KEY_EMILIA, OPERATOR_ID_EMILIA);
 
+        
+
         System.out.println( "USER laura ID: " + laura.accountId );
         System.out.println(" private key: " + laura.privateKey );
         System.out.println(" public key: " + laura.publicKey);
