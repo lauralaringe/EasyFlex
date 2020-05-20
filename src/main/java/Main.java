@@ -37,11 +37,12 @@ public class Main {
         System.out.println(" public key: " + laura.publicKey);
 
         // Decide a commitment
-        String power = "0";
+        int power = 0;
         ArrayList<Integer>timestamp = new ArrayList<Integer>(2);
         timestamp.add(0); // start of timestamp
         timestamp.add(0); // end of timestamp
-        Commitment comm = new Commitment(power, timestamp);
+        int tolerance = 0;
+        Commitment comm = new Commitment(power, timestamp, tolerance);
 
 
         // Emilia is the sender, Laura is DSO
