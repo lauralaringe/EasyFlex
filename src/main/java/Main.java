@@ -6,6 +6,7 @@ import com.hedera.hashgraph.sdk.crypto.ed25519.Ed25519PublicKey;
 import io.github.cdimascio.dotenv.Dotenv;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main {
@@ -29,11 +30,19 @@ public class Main {
         User laura= new User(OPERATOR_KEY, OPERATOR_PUBLIC_KEY, OPERATOR_ID);
         User emilia = new User(OPERATOR_KEY_EMILIA, OPERATOR_PUBLIC_KEY_EMILIA, OPERATOR_ID_EMILIA);
 
-        
+
 
         System.out.println( "USER laura ID: " + laura.accountId );
         System.out.println(" private key: " + laura.privateKey );
         System.out.println(" public key: " + laura.publicKey);
+
+        // Decide a commitment
+        float power = 0;
+        ArrayList<Integer>timestamp = new ArrayList<Integer>(2);
+        timestamp.add(0); // start of timestamp
+        timestamp.add(0); // end of timestamp
+        Commitment comm = new Commitment(power, timestamp);
+
 
         // Emilia is the sender, Laura is DSO
         // 1. Emilia sends the transactions with messages and topic to the testnet/mainnet nodes
