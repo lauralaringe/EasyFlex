@@ -37,7 +37,7 @@ public class Main {
         System.out.println(" public key: " + laura.publicKey);
 
         // Decide a commitment
-        float power = 0;
+        String power = "0";
         ArrayList<Integer>timestamp = new ArrayList<Integer>(2);
         timestamp.add(0); // start of timestamp
         timestamp.add(0); // end of timestamp
