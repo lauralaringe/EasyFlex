@@ -33,7 +33,7 @@ public class Main {
         System.out.println(" private key: " + laura.privateKey );
         System.out.println(" public key: " + laura.publicKey);
 
-        // Emilia is the sender, Laura is receiver
+        // Emilia is the sender, Laura is DSO
         // 1. Emilia sends the transactions with messages and topic to the testnet/mainnet nodes
         // 2. Blockchain network puts messages in consensus order by topic
         // 3. Mirror node receive all infro from the testnet/mainnet
