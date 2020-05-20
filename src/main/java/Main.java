@@ -1,6 +1,7 @@
 import com.hedera.hashgraph.sdk.Client;
 import com.hedera.hashgraph.sdk.HederaStatusException;
 import com.hedera.hashgraph.sdk.account.AccountId;
+import com.hedera.hashgraph.sdk.consensus.ConsensusTopicId;
 import com.hedera.hashgraph.sdk.crypto.ed25519.Ed25519PrivateKey;
 import com.hedera.hashgraph.sdk.crypto.ed25519.Ed25519PublicKey;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -8,6 +9,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Main {
 
@@ -30,7 +32,18 @@ public class Main {
         User laura= new User(OPERATOR_KEY, OPERATOR_PUBLIC_KEY, OPERATOR_ID);
         User emilia = new User(OPERATOR_KEY_EMILIA, OPERATOR_PUBLIC_KEY_EMILIA, OPERATOR_ID_EMILIA);
 
+        Scanner inputStr = new Scanner(System.in);
 
+        // Submit the measurement to Hedera Consensus Service
+        ConsensusTopicId myTopicId;
+        System.out.print("Insert the topic ID: ");
+        String topicId_ = inputStr.nextLine();
+        myTopicId = ConsensusTopicId.fromString(topicId_);
+        System.out.println("Sending the data every ten minutes");
+        SubmitMeasFreq myMeasFreq = new SubmitMeasFreq();
+        String filename;
+        filename = "measurement.csv";
+        myMeasFreq.setData(filename, client, myTopicId);
 
         System.out.println( "USER laura ID: " + laura.accountId );
         System.out.println(" private key: " + laura.privateKey );
@@ -62,7 +75,7 @@ public class Main {
         // Mirror node sends messages for the topic for our application
         // The application sends the message to Laura to see if the the resource is giving the energy committed
 
-        
+
 
 
 

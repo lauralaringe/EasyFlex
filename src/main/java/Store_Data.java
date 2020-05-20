@@ -4,15 +4,12 @@ import com.hedera.hashgraph.sdk.TransactionId;
 import com.hedera.hashgraph.sdk.TransactionReceipt;
 import com.hedera.hashgraph.sdk.account.AccountId;
 import com.hedera.hashgraph.sdk.crypto.ed25519.Ed25519PrivateKey;
-import com.hedera.hashgraph.sdk.crypto.ed25519.Ed25519PublicKey;
 import com.hedera.hashgraph.sdk.file.FileCreateTransaction;
 import com.hedera.hashgraph.sdk.file.FileId;
-import io.github.cdimascio.dotenv.Dotenv;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 
 public class Store_Data {
@@ -27,7 +24,7 @@ public class Store_Data {
         client.setOperator(OPERATOR_ID,OPERATOR_KEY); //now this is the operator
 
         //Import the measurement from .csv
-        String fileName = "mes.csv";
+        String fileName = "measurements.csv";
         ImportMeas myMeas = new ImportMeas();
         myMeas.setData(fileName);
 
