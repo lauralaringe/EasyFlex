@@ -1,6 +1,6 @@
 ## Validating Flexibility Commitments with Hedera Hashgraph 
 
-Hedera SDK used from https://github.com/hashgraph/hedera-sdk-java
+
 
 
 
@@ -26,6 +26,14 @@ OPERATOR_KEY_2=302e020100300506032r535431100fb446efab9c0dbd3d2b1307ada346a769e6e
 OPERATOR_PUBLIC_KEY_2=302a300506032b6570032100d5dd7ea7ffbdab56670eefdd3168abe21c2c02a0cdac21de0e99adf44
 
 ```
+
+## SDK and API Reference
+Hedera Hashgraph SDK with examples: https://github.com/hashgraph/hedera-sdk-java
+
+Hedera Hashgraph API: https://docs.hedera.com/guides/docs/hedera-api/consensus-service
+
+## How to use
+
 ## Roadmap
 The idea is expanding the use of Hedera Hasgraph and creating a mainnet and using our own mirror node where to build a proper application to retrieve the flexibility resurces' power and energy information to display them and validate the flexibility commitment.
 
