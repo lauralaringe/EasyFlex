@@ -113,3 +113,6 @@ gradle-app.setting
 
 # measurement file
 mes.csv
+
+# env file
+.env

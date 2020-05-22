@@ -30,7 +30,7 @@ public class Main {
         // by this account and be signed by this key
 
         User laura= new User(OPERATOR_KEY, OPERATOR_PUBLIC_KEY, OPERATOR_ID);
-        User emilia = new User(OPERATOR_KEY_EMILIA, OPERATOR_PUBLIC_KEY_EMILIA, OPERATOR_ID_EMILIA);
+        User emilia = new User(OPERATOR_KEY_2, OPERATOR_PUBLIC_KEY_2, OPERATOR_ID_2);
 
         Scanner inputStr = new Scanner(System.in);
 
