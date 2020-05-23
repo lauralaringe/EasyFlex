@@ -27,7 +27,7 @@ Hedera Hashgraph SDK with examples: https://github.com/hashgraph/hedera-sdk-java
 Hedera Hashgraph API: https://docs.hedera.com/guides/docs/hedera-api/consensus-service
 
 ## How to use
-1. Run Main.java
+1. Run MainOLD.java
 2. It will be asked to choose a service between Cryptocurrency, File service and Consensus service.
 3a. Cryptocurrency will transfer Hbars (Hedera cryptocurrency) at the recipient account selected. The transaction can be checked in the mirror node at https://explorer.kabuto.sh/mainnet
 3b. File service will 

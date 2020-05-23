@@ -109,8 +109,6 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-# measurement file
-mes.csv
 
 # env file
 .env
