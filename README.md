@@ -13,18 +13,12 @@ Once you've completed setting up your profile, your home page will automatically
 An .env file for this project should look like the text below.
 
 ```bash
-# DSO account keys
+# Account keys
 OPERATOR_ID=0.0.1752
 OPERATOR_KEY=302e020100300506032b65700422042068b0ecae635505d8t345674e4f7d8b5b52682e419068acd225
 OPERATOR_PUBLIC_KEY=302a300506032b65700323457bb8c7b831d0d91d163b2ad791e75064f6015b2f5a621c2aea3eaec
 MIRROR_NODE_ADDRESS=api.testnet.kabuto.sh:50211
 NODE_ADDRESS=0.0.3
-
-# User account keys 
-OPERATOR_ID_2=0.0.2267
-OPERATOR_KEY_2=302e020100300506032r535431100fb446efab9c0dbd3d2b1307ada346a769e6ebba0e45a48
-OPERATOR_PUBLIC_KEY_2=302a300506032b6570032100d5dd7ea7ffbdab56670eefdd3168abe21c2c02a0cdac21de0e99adf44
-
 ```
 
 ## SDK and API Reference
@@ -33,7 +27,11 @@ Hedera Hashgraph SDK with examples: https://github.com/hashgraph/hedera-sdk-java
 Hedera Hashgraph API: https://docs.hedera.com/guides/docs/hedera-api/consensus-service
 
 ## How to use
-
+1. Run Main.java
+2. It will be asked to choose a service between Cryptocurrency, File service and Consensus service.
+3a. Cryptocurrency will transfer Hbars (Hedera cryptocurrency) at the recipient account selected. The transaction can be checked in the mirror node at https://explorer.kabuto.sh/mainnet
+3b. File service will 
+3c. The options for the Consesus service will be 7. To read a file sent 2 computers will be needed, with different accounts.
 ## Roadmap
 The idea is expanding the use of Hedera Hasgraph and creating a mainnet and using our own mirror node where to build a proper application to retrieve the flexibility resurces' power and energy information to display them and validate the flexibility commitment.
 
