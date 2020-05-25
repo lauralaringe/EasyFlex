@@ -1,3 +1,5 @@
+package Examples;
+
 import com.hedera.hashgraph.sdk.Client;
 import com.hedera.hashgraph.sdk.HederaStatusException;
 import com.hedera.hashgraph.sdk.TransactionId;
