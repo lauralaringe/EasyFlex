@@ -33,7 +33,7 @@ public class Main {
     private static final Ed25519PublicKey OPERATOR_PUBLIC_KEY = Ed25519PublicKey.fromString(Objects.requireNonNull(Dotenv.load().get("OPERATOR_PUBLIC_KEY")));
     private static final String MIRROR_NODE_ADDRESS = Objects.requireNonNull(Dotenv.load().get("MIRROR_NODE_ADDRESS"));
 
-    public static void main(String[] args) throws HederaStatusException, IOException {
+    public static void main(String[] args) throws HederaStatusException, IOException, InterruptedException {
         float power = 5; //5 kW
         float tolerance = (float) 0.05; // 5%
         Commitment power_committed = new Commitment(power, tolerance);
@@ -185,7 +185,7 @@ public class Main {
                                     .setAdminKey(OPERATOR_PUBLIC_KEY)
                                     .execute(client);
                             // Grab the newly generated topic ID
-                            final ConsensusTopicId topicId = transactionId.getReceipt(client).getConsensusTopicId();
+                            ConsensusTopicId topicId = transactionId.getReceipt(client).getConsensusTopicId();
                             System.out.println("Your topic ID is: " + topicId);
                             break;
                         case 2:
@@ -279,7 +279,7 @@ public class Main {
                             topicId_ = inputStr.nextLine();
                             myTopicId = ConsensusTopicId.fromString(topicId_);
                             MirrorClient consensusClient = new MirrorClient(MIRROR_NODE_ADDRESS);
-                            AtomicReference<String> listenedMessage = new AtomicReference<>();
+                            List<String> listenedMessage = new ArrayList<>();
 
                             new MirrorConsensusTopicQuery()
                                     .setTopicId(myTopicId)
@@ -288,10 +288,10 @@ public class Main {
                                                     System.out.println("The commitment is not valid");
                                                 }
                                                 String messageAsString = new String(resp.message, StandardCharsets.UTF_8);
-                                                listenedMessage.set(messageAsString);
+                                                listenedMessage.add(resp.consensusTimestamp + "\n" + messageAsString);
 //                                                System.out.println( messageAsString + "end");
                                                 String lines[] = messageAsString.split("\\r?\\n");
-                                                for (int k=0; k<lines.length-1; k++) {
+                                                for (int k=1; k<lines.length-1; k++) {
                                                     String[] power_string = lines[k].split(",");
 //                                                    System.out.println(power_string[1]);
                                                     float real_power = Float.parseFloat(power_string[1].toString());
@@ -308,7 +308,18 @@ public class Main {
                                             },
                                             // On gRPC error, print the stack trace
                                             Throwable::printStackTrace);
+                            Thread.sleep(600000);
+                            System.out.println("Do you want to show the data listened?\n" +
+                                    "(1) Yes\n" +
+                                    "(2) No\n" );
+                            int men = inputMenu.nextInt();
+                            switch(men) {
+                                case 1:
+                                    System.out.println(listenedMessage);
 
+                                case 2:
+                                    break;
+                            }
 
 
 
