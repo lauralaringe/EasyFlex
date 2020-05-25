@@ -33,8 +33,10 @@ Run Main.java and it will guide you trough the different services.
 
 The folder example, contains runnable examples using Hedera Hasgraph.
 
+Below, a gif showing how the program looks like.
+
 ## Roadmap
-The idea is expanding the use of Hedera Hasgraph and creating a mainnet and using our own mirror node where to build a proper application to retrieve the flexibility resurces' power and energy information to display them and validate the flexibility commitment.
+The idea is expanding the use of Hedera Hasgraph, creating a mainnet and using our own mirror and build a proper application to retrieve the flexibility resurces' power and energy information to display them and validate the flexibility commitment. This application would be availabe for all the users.
 
 ## Support
 Laura Laringe: lauralaringe@gmail.com 
