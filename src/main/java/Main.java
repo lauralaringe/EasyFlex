@@ -309,6 +309,10 @@ public class Main {
                                             // On gRPC error, print the stack trace
                                             Throwable::printStackTrace);
                             Thread.sleep(30000);
+                            if (flag.get() == true) {
+                                System.out.println("The commitment is valid!");
+
+                            };
                             System.out.println("Do you want to show the data listened?\n" +
                                     "(1) Yes\n" +
                                     "(2) No\n" );
