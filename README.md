@@ -27,11 +27,10 @@ Hedera Hashgraph SDK with examples: https://github.com/hashgraph/hedera-sdk-java
 Hedera Hashgraph API: https://docs.hedera.com/guides/docs/hedera-api/consensus-service
 
 ## How to use
-1. Run MainOLD.java
-2. It will be asked to choose a service between Cryptocurrency, File service and Consensus service.
-3a. Cryptocurrency will transfer Hbars (Hedera cryptocurrency) at the recipient account selected. The transaction can be checked in the mirror node at https://explorer.kabuto.sh/mainnet
-3b. File service will 
-3c. The options for the Consesus service will be 7. To read a file sent 2 computers will be needed, with different accounts.
+Run Main.java and it will guide you trough the different services.
+
+2 files are used for the flexibility validation: one file that will result in an invalid commitment (invalid file) and one in a valid commitment (valid file). If the file selected is the invalid one, a string will be printed sayinging the commitment is not valid.
+
 ## Roadmap
 The idea is expanding the use of Hedera Hasgraph and creating a mainnet and using our own mirror node where to build a proper application to retrieve the flexibility resurces' power and energy information to display them and validate the flexibility commitment.
 
