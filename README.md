@@ -29,7 +29,7 @@ Hedera Hashgraph API: https://docs.hedera.com/guides/docs/hedera-api/consensus-s
 ## How to use
 Run Main.java and it will guide you trough the different services.
 
-2 files are used for the flexibility validation: one file that will result in an invalid commitment (invalid file) and one in a valid commitment (valid file). If the file selected is the invalid one, a string will be printed sayinging the commitment is not valid.
+Two files are used for the flexibility validation: one file that will result in an invalid commitment (invalid file) and one in a valid commitment (valid file). If the file selected is the invalid one, a string will be printed sayinging the commitment is not valid.
 
 The folder example, contains runnable examples using Hedera Hasgraph.
 
