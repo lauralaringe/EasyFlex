@@ -308,7 +308,7 @@ public class Main {
                                             },
                                             // On gRPC error, print the stack trace
                                             Throwable::printStackTrace);
-                            Thread.sleep(600000);
+                            Thread.sleep(30000);
                             System.out.println("Do you want to show the data listened?\n" +
                                     "(1) Yes\n" +
                                     "(2) No\n" );
