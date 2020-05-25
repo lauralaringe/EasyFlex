@@ -35,6 +35,8 @@ The folder example, contains runnable examples using Hedera Hasgraph.
 
 Below, a gif showing how the program looks like.
 
+![Alt Text](https://media.giphy.com/media/ZY325sL6acFW3U3ic3/giphy.gif)
+
 ## Roadmap
 The idea is expanding the use of Hedera Hasgraph, creating a mainnet and using our own mirror and build a proper application to retrieve the flexibility resurces' power and energy information to display them and validate the flexibility commitment. This application would be availabe for all the users.
 
