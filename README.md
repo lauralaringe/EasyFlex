@@ -6,7 +6,7 @@ The  objective  of  this  project  was  to  create  a  proof  of  concept  of  u
 
 ## Requirements 
 A .env file must be created with accounts and mirror node information.
-To create an account go you need to create an Hedera Portal profile registeromg on https://portal.hedera.com/register.
+To create an account, you need to create an Hedera Portal profile registering on https://portal.hedera.com/register.
 
 Once you've completed setting up your profile, your home page will automatically create a testnet account and generate the public and private key pair associated with it. You can easily copy your accountId, public key, and private key information to your clipboard to use when configuring your SDK environment for testnet or set up the .env file. 
 
