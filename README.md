@@ -1,6 +1,6 @@
 ## Validating Flexibility Commitments with Hedera Hashgraph 
 The  objective  of  this  project  was  to  create  a  proof  of  concept  of  using  distributed  ledger  technology  -specifically, Hedera Hashgraph - to validate flexibility commitments from assets.
-
+To know more: https://docs.google.com/presentation/d/1bwn3KQCNz5rwXfNay_RLen6CBqWYY6DiAl5RqHJTOQQ/edit?usp=sharing
 
 
 
